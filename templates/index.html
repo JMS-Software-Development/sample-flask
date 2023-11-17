@@ -50,7 +50,9 @@
                     console.log(imagePrompt);
                     $('#originalPrompt p').text(imagePrompt);
                     $('#generatedImage').attr('src', image);
-                    $('#loadingSpinner').hide();
+                    $('#generatedImage').load(function() {
+                        $('#loadingSpinner').hide();
+                    });
                 },
                 error: function(data) {
                     console.log(data);
